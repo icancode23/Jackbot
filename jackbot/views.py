@@ -28,6 +28,19 @@ class MychatbotView(generic.View):
 	def post (self,request,*args,**kwargs):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print incoming_message
+
+		for entry in incoming_mesage['entry']:
+			for message in entry['messaging']:
+				print message
+				try:
+					sender_id = message['sender']['id']
+					message_text = message['message']['text']
+					post_facebook_message(sender_id,message_text) 
+				except Exception as e:
+					print e
+					pass
+
+		return HttpResponse()  
 	
 def index(request):
 	return HttpResponse('hello world')
