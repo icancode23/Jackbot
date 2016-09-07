@@ -4,8 +4,15 @@ from django.views import generic
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
+import requests
 # Create your views here.
 VERIFY_TOKEN='7thsep2016'
+PAGE_ACCESS_TOKEN ='EAAZAmgNlvlm8BADe3cBcDQZAvaWb4uivxgbKavBzm6DefYmhFSQfGDvvC0ZAWJMjSaoVhVZANZAKZAbBbSamyeSFuPzXZAelNRnP6jNtZCgy7jID0tYJdZBN5fubQcUaHtzxFCemltFM0liqPb5pJZBsWZBekU68t3qvw3mGpCzBxBz6wZDZD'
+def post_facebook_message(fbid,message_text):
+	post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
+	response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":message_text}})
+	status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
+	print status.json()
 class MychatbotView(generic.View):
 	def get(self,request,*args,**kwargs):
 		if self.request.GET['hub.verify_token']==VERIFY_TOKEN:
