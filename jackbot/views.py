@@ -29,7 +29,7 @@ class MychatbotView(generic.View):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print incoming_message
 
-		for entry in incoming_mesage['entry']:
+		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
 				print message
 				try:
