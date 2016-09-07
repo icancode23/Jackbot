@@ -9,5 +9,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',v.index),
-    url(r'^facebook_auth/',v.MychatbotView.as_view()),
+    url(r'^facebook_auth$',v.MychatbotView.as_view()),
 )
