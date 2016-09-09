@@ -34,7 +34,7 @@ class MychatbotView(generic.View):
 				print message
 				try:
 					sender_id = message['sender']['id']
-					message_text ="this is me"
+					message_text =message['message']['text']
 					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
 				 	print e
