@@ -29,16 +29,16 @@ class MychatbotView(generic.View):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print "this is the incoming message",incoming_message
 
-		for entry in incoming_message['entry']:
-			for message in entry['messaging']:
-				print message
-				try:
-					sender_id = message['sender']['id']
-					message_text = "I am a Chatbot,coded by Nipun Arora"
-					post_facebook_message(sender_id,message_text) 
-				except Exception as e:
-					print e
-					pass
+		# for entry in incoming_message['entry']:
+		# 	for message in entry['messaging']:
+		# 		print message
+		# 		try:
+		# 			sender_id = message['sender']['id']
+		# 			message_text = "I am a Chatbot,coded by Nipun Arora"
+		# 			post_facebook_message(sender_id,message_text) 
+		# 		except Exception as e:
+		# 			print e
+		# 			pass
 
 		return HttpResponse()  
 	
