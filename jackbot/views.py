@@ -34,7 +34,7 @@ class MychatbotView(generic.View):
 				print message
 				try:
 					sender_id = message['sender']['id']
-					message_text = message['message']['text']
+					message_text = "I am a Chatbot,coded by Nipun Arora"
 					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
 					print e
@@ -43,4 +43,5 @@ class MychatbotView(generic.View):
 		return HttpResponse()  
 	
 def index(request):
-	return HttpResponse('hello world')
+	print 'this is me'
+	return HttpResponse()
