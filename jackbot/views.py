@@ -32,13 +32,13 @@ class MychatbotView(generic.View):
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
 				print message
-				# try:
-				sender_id = message['sender']['id']
-				message_text = "i am a chatbot,coded by nipun"
-				post_facebook_message(sender_id,message_text) 
-				# except Exception as e:
-				# 	print e
-				# 	pass
+				try:
+					sender_id = message['sender']['id']
+					message_text =message['message']['text']
+					post_facebook_message(sender_id,message_text) 
+				except Exception as e:
+				 	print e
+					pass
 
 		return HttpResponse()  
 	
