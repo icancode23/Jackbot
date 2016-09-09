@@ -27,7 +27,7 @@ class MychatbotView(generic.View):
 		return generic.View.dispatch(self,request,*args,**kwargs)
 	def post (self,request,*args,**kwargs):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
-		print incoming_message
+		print 'this is another request',incoming_message
 
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
