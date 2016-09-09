@@ -39,6 +39,7 @@ class MychatbotView(generic.View):
 					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
 				 	#print e
+				 	print 'this is an error'
 					pass
 
 		return HttpResponse()  
