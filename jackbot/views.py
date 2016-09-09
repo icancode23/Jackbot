@@ -12,7 +12,7 @@ def post_facebook_message(fbid,message_text):
 	post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
 	response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":message_text}})
 	status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
-	print status.json()
+	# print status.json()
 class MychatbotView(generic.View):
 	def get(self,request,*args,**kwargs):
 		if self.request.GET['hub.verify_token']==VERIFY_TOKEN:
