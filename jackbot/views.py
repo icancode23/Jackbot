@@ -39,8 +39,8 @@ class MychatbotView(generic.View):
 		  		try:
 		  			requestcount=requestcount+1
 		  			print requestcount
-		 # 		except Exception as es:
-		 # 			print "the error is",es
+		  		except Exception as es:
+		  			print "the error is",es
 			# else:
 		 # 		pass
 
