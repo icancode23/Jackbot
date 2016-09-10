@@ -30,7 +30,7 @@ class MychatbotView(generic.View):
 		print 'the incoming message is ',incoming_message
 		print 'the type of incoming message is',type(incoming_message)
 		print  ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']==304882153210685)
-		if ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']=='304882153210685'):
+		if ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']==304882153210685):
 			global messagelist
 			messagelist==['this is the message i am talking about']
 			print messagelist
