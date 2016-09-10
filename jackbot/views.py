@@ -20,29 +20,26 @@ class MychatbotView(generic.View):
 
 		else :
 			return HttpResponse('oops invalid session')
-	try:
-		global requestcount
-		requestcount=1
-	except:
-		print "the error lies here"
 	
+	global requestcount
+	requestcount=1
 	@method_decorator(csrf_exempt)
 	def dispatch(self,request,*args,**kwargs):
 		return generic.View.dispatch(self,request,*args,**kwargs)
 	def post (self,request,*args,**kwargs):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print 'the incoming message is:',incoming_message
-		if (incoming_message['entry'][0]['messaging'][0]['recipient']['id']=='304882153210685'):
-			if (requestcount==1):
-				print 'HIIIIIIII'
-		# 		global messagelist
-		# 		messagelist=['so who are you? huh']
-		 # 		try:
-		 # 			requestcount=requestcount+1
-		 # 		except Exception as es:
-		 # 			print "the error is",es
-			# else:
-		 # 		pass
+		print (incoming_message['entry'][0]['messaging'][0]['recipient']['id']=='1758988304')
+		# 	if (requestcount==1):
+		# 		print 'HIIIIIIII'
+		# # 		global messagelist
+		# # 		messagelist=['so who are you? huh']
+		#  		try:
+		#  			requestcount=requestcount+1
+		#  		except Exception as es:
+		#  			print "the error is",es
+		# 	else:
+		#  		pass
 		print 'the type of incoming message is',type(incoming_message)
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
