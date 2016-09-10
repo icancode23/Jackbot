@@ -28,6 +28,7 @@ class MychatbotView(generic.View):
 		return generic.View.dispatch(self,request,*args,**kwargs)
 	def post (self,request,*args,**kwargs):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
+		print 'the incoming message is ',incoming_message
 		print 'the type of incoming message is',type(incoming_message)
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
