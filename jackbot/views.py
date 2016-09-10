@@ -22,6 +22,8 @@ class MychatbotView(generic.View):
 			return HttpResponse('oops invalid session')
 
 
+	global messagelist
+	messagelist=['this is nipun']
 	@method_decorator(csrf_exempt)
 	def dispatch(self,request,*args,**kwargs):
 		return generic.View.dispatch(self,request,*args,**kwargs)
@@ -29,7 +31,6 @@ class MychatbotView(generic.View):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print 'the incoming message is:',incoming_message
 		requestcount=1
-		messagelist=['this is nipun']
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
 				print 'the request count is',requestcount
