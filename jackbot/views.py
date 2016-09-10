@@ -29,20 +29,20 @@ class MychatbotView(generic.View):
 		print 'the incoming message is ',incoming_message
 		print 'the type of incoming message is',type(incoming_message)
 		print  ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']==304882153210685)
-		# # if ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']=='304882153210685'):
-		# # 	global messagelist
-		# # 	messagelist=['this is me nipun huh']
-		# # 	print messagelist
+		if ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']=='304882153210685'):
+			global messagelist
+			messagelist=['this is me nipun huh']
+			print messagelist
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
 				print 'the RECIPIENT id is',message['recipient']['id']
 				try:
 					sender_id=message['sender']['id']
 					#print 'the sender id is working'
-					message_text=message['message']['text']
+				#	message_text=message['message']['text']
 					#print messagelist[0]
-					# message_text=messagelist[0]
-					# messagelist.pop()
+					message_text=messagelist[0]
+					messagelist.pop()
 					# print '*' * 8
 					# print 'this is the message text',message_text
 					post_facebook_message(sender_id,message_text) 
