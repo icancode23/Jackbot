@@ -43,12 +43,13 @@ class MychatbotView(generic.View):
 				#print incoming_message
 				print 'the RECIPIENT id is',message['recipient']['id']
 				try:
+					global messagelist
 					print messagelist
 					sender_id=message['sender']['id']
 					#print 'the sender id is working'
-					message_text=message['message']['text']
+					#message_text=message['message']['text']
 					#print messagelist[0]
-					# message_text=messagelist[0]
+					message_text=messagelist[0]
 					# messagelist.pop()
 					# print '*' * 8
 					# print 'this is the message text',message_text
