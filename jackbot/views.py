@@ -28,12 +28,15 @@ class MychatbotView(generic.View):
 	def post (self,request,*args,**kwargs):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		# print 'this is another request',incoming_message
-
+		requestcount=1
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
+				print 'the request count is',requestcount
+				requestcount=requestcount+1
 				print 'the sender id is',message['sender']['id']
 				try:
 					sender_id = message['sender']['id']
+					print 'the sender id is working'
 					message_text =message['message']['text']
 					print '*' * 8
 					print 'this is the message text',message_text
