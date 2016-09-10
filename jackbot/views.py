@@ -21,8 +21,8 @@ class MychatbotView(generic.View):
 		else :
 			return HttpResponse('oops invalid session')
 
-	# global requestcount
-	# requestcount=1
+	global requestcount
+	requestcount=1
 	@method_decorator(csrf_exempt)
 	def dispatch(self,request,*args,**kwargs):
 		return generic.View.dispatch(self,request,*args,**kwargs)
