@@ -23,7 +23,7 @@ class MychatbotView(generic.View):
 
 
 	global messagelist
-	messagelist=['this is nipun']
+	messagelist=['so who are you?']
 	@method_decorator(csrf_exempt)
 	def dispatch(self,request,*args,**kwargs):
 		return generic.View.dispatch(self,request,*args,**kwargs)
