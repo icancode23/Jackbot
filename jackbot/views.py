@@ -35,8 +35,8 @@ class MychatbotView(generic.View):
 		# 		global messagelist
 		# 		messagelist=['so who are you? huh']
 		 		requestcount=requestcount+1
-		# 	else:
-		# 		pass
+			else:
+		 		pass
 		print 'the type of incoming message is',type(incoming_message)
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
