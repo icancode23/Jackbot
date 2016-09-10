@@ -36,6 +36,7 @@ class MychatbotView(generic.View):
 		# 	print messagelist
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
+				print incoming_message
 				print 'the RECIPIENT id is',message['recipient']['id']
 				try:
 					sender_id=message['sender']['id']
