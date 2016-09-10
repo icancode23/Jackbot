@@ -38,7 +38,7 @@ class MychatbotView(generic.View):
 			for message in entry['messaging']:
 				print 'the request count is',requestcount
 				requestcount=requestcount+1
-				print 'the RECIPIENT id is',message['sender']['id']
+				print 'the RECIPIENT id is',message['recipient']['id']
 				try:
 					sender_id = message['sender']['id']
 					#print 'the sender id is working'
