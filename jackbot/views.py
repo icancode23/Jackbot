@@ -36,8 +36,9 @@ class MychatbotView(generic.View):
 		 		global messagelist
 		 		messagelist=['so who are you? huh']
 		 		print messagelist
-		 # 		try:
-		 # 			requestcount=requestcount+1
+		  		try:
+		  			requestcount=requestcount+1
+		  			print requestcount
 		 # 		except Exception as es:
 		 # 			print "the error is",es
 			# else:
