@@ -30,16 +30,18 @@ class MychatbotView(generic.View):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print 'the incoming message is:',incoming_message
 		if (incoming_message['entry'][0]['messaging'][0]['recipient']['id']==1758988304):
+			print requestcount
 			if (requestcount==1):
 				print 'HIIIIIIII'
 		# 		global messagelist
 		# 		messagelist=['so who are you? huh']
-		 		try:
-		 			requestcount=requestcount+1
-		 		except Exception as es:
-		 			print "the error is",es
-			else:
-		 		pass
+		 # 		try:
+		 # 			requestcount=requestcount+1
+		 # 		except Exception as es:
+		 # 			print "the error is",es
+			# else:
+		 # 		pass
+
 		print 'the type of incoming message is',type(incoming_message)
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
