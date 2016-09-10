@@ -29,6 +29,7 @@ class MychatbotView(generic.View):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print 'the incoming message is:',incoming_message
 		requestcount=1
+		messagelist=['this is nipun']
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
 				print 'the request count is',requestcount
@@ -37,9 +38,11 @@ class MychatbotView(generic.View):
 				try:
 					sender_id = message['sender']['id']
 					#print 'the sender id is working'
-					message_text =message['message']['text']
-					print '*' * 8
-					print 'this is the message text',message_text
+					message_text =messagelist[0]
+					#message['message']['text']
+					messagelist.pop()
+					# print '*' * 8
+					# print 'this is the message text',message_text
 					post_facebook_message(sender_id,message_text) 
 				except Exception as e:
 				 	#print e
