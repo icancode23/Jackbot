@@ -6,6 +6,7 @@ from django.utils.decorators import method_decorator
 import json
 import requests
 # Create your views here.
+messagelist=[]
 VERIFY_TOKEN='7thsep2016'
 PAGE_ACCESS_TOKEN ='EAAZAmgNlvlm8BADe3cBcDQZAvaWb4uivxgbKavBzm6DefYmhFSQfGDvvC0ZAWJMjSaoVhVZANZAKZAbBbSamyeSFuPzXZAelNRnP6jNtZCgy7jID0tYJdZBN5fubQcUaHtzxFCemltFM0liqPb5pJZBsWZBekU68t3qvw3mGpCzBxBz6wZDZD'
 def post_facebook_message(fbid,message_text):
@@ -31,7 +32,7 @@ class MychatbotView(generic.View):
 		print  ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']==304882153210685)
 		if ('text' in incoming_message['entry'][0]['messaging'][0]['message'].keys() and  incoming_message['entry'][0]['messaging'][0]['recipient']['id']=='304882153210685'):
 			global messagelist
-			messagelist=['this is me nipun huh']
+			messagelist==['this is the message i am talking about']
 			print messagelist
 		for entry in incoming_message['entry']:
 			for message in entry['messaging']:
