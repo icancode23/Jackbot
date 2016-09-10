@@ -41,7 +41,7 @@ class MychatbotView(generic.View):
 					sender_id = message['sender']['id']
 					#print 'the sender id is working'
 					#message_text=message['message']['text']
-					print messagelist[0]
+					#print messagelist[0]
 					message_text =messagelist[0]
 					messagelist.pop()
 					# print '*' * 8
