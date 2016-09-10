@@ -41,10 +41,10 @@ class MychatbotView(generic.View):
 				try:
 					sender_id=message['sender']['id']
 					#print 'the sender id is working'
-					#message_text=message['message']['text']
+					message_text=message['message']['text']
 					#print messagelist[0]
-					message_text=messagelist[0]
-					messagelist.pop()
+					# message_text=messagelist[0]
+					# messagelist.pop()
 					# print '*' * 8
 					# print 'this is the message text',message_text
 					post_facebook_message(sender_id,message_text) 
