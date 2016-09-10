@@ -35,7 +35,6 @@ class MychatbotView(generic.View):
 				global messagelist
 				messagelist=['so who are you? huh']
 				requestcount=requestcount+1
-
 			else:
 				pass
 
