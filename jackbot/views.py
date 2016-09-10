@@ -28,7 +28,7 @@ class MychatbotView(generic.View):
 	def post (self,request,*args,**kwargs):
 		incoming_message=json.loads(self.request.body.decode('utf-8'))
 		print 'the incoming message is:',incoming_message
-		requestcount=
+		requestcount=1
 		if (dict['entry'][0]['messaging'][0]['recipient']['id']=='304882153210685'):
 			global messagelist
 			messagelist=['so who are you? huh']
