@@ -1,10 +1,10 @@
 HTTP/1.1 500 INTERNAL SERVER ERROR
 Connection: keep-alive
 Server: gunicorn/19.6.0
-Date: Fri, 07 Oct 2016 15:25:03 GMT
+Date: Fri, 07 Oct 2016 15:32:07 GMT
 Transfer-Encoding: chunked
-X-Frame-Options: SAMEORIGIN
 Content-Type: text/html
+X-Frame-Options: SAMEORIGIN
 Via: 1.1 vegur
 
 
@@ -187,7 +187,7 @@ Via: 1.1 vegur
     </tr>
     <tr>
       <th>Server time:</th>
-      <td>Fri, 7 Oct 2016 15:25:03 +0000</td>
+      <td>Fri, 7 Oct 2016 15:32:07 +0000</td>
     </tr>
   </table>
 </div>
@@ -205,13 +205,13 @@ Via: 1.1 vegur
           <code>/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/base.py</code> in <code>get_response</code>
 
           
-            <div class="context" id="c140298593242792">
+            <div class="context" id="c140716148781000">
               
-                <ol start="80" class="pre-context" id="pre140298593242792"><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>        urlconf = settings.ROOT_URLCONF</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>        urlresolvers.set_urlconf(urlconf)</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>        resolver = urlresolvers.RegexURLResolver(r&#39;^/&#39;, urlconf)</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>        try:</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>            response = None</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>            # Apply request middleware</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>            for middleware_method in self._request_middleware:</pre></li></ol>
+                <ol start="80" class="pre-context" id="pre140716148781000"><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>        urlconf = settings.ROOT_URLCONF</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>        urlresolvers.set_urlconf(urlconf)</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>        resolver = urlresolvers.RegexURLResolver(r&#39;^/&#39;, urlconf)</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>        try:</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>            response = None</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>            # Apply request middleware</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>            for middleware_method in self._request_middleware:</pre></li></ol>
               
-              <ol start="87" class="context-line"><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>                response = middleware_method(request)</pre> <span>...</span></li></ol>
+              <ol start="87" class="context-line"><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>                response = middleware_method(request)</pre> <span>...</span></li></ol>
               
-                <ol start='88' class="post-context" id="post140298593242792"><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>                if response:</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>                    break</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre></pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>            if response is None:</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>                if hasattr(request, &#39;urlconf&#39;):</pre></li><li onclick="toggle('pre140298593242792', 'post140298593242792')"><pre>                    # Reset url resolver with a custom urlconf.</pre></li></ol>
+                <ol start='88' class="post-context" id="post140716148781000"><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>                if response:</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>                    break</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre></pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>            if response is None:</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>                if hasattr(request, &#39;urlconf&#39;):</pre></li><li onclick="toggle('pre140716148781000', 'post140716148781000')"><pre>                    # Reset url resolver with a custom urlconf.</pre></li></ol>
               
             </div>
           
@@ -219,10 +219,10 @@ Via: 1.1 vegur
           
             <div class="commands">
                 
-                    <a href="#" onclick="return varToggle(this, '140298593242792')"><span>&#x25b6;</span> Local vars</a>
+                    <a href="#" onclick="return varToggle(this, '140716148781000')"><span>&#x25b6;</span> Local vars</a>
                 
             </div>
-            <table class="vars" id="v140298593242792">
+            <table class="vars" id="v140716148781000">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -232,8 +232,23 @@ Via: 1.1 vegur
               <tbody>
                 
                   <tr>
+                    <td>middleware_method</td>
+                    <td class="code"><pre>&lt;bound method CommonMiddleware.process_request of &lt;django.middleware.common.CommonMiddleware object at 0x7ffb08ac9510&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>resolver</td>
+                    <td class="code"><pre>&lt;RegexURLResolver &#39;chatbot.urls&#39; (None:None) ^/&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&quot;&lt;WSGIRequest\npath:/facebook_auth,\nGET:&lt;QueryDict: {}&gt;,\nPOST:&lt;QueryDict: {}&gt;,\nCOOKIES:{},\nMETA:{&#39;CONTENT_LENGTH&#39;: &#39;269&#39;,\n &#39;CONTENT_TYPE&#39;: &#39;application/json&#39;,\n &#39;HTTP_ACCEPT&#39;: &#39;*/*&#39;,\n &#39;HTTP_CONNECTION&#39;: &#39;close&#39;,\n &#39;HTTP_CONNECT_TIME&#39;: &#39;1&#39;,\n &#39;HTTP_HOST&#39;: &#39;jackbot23.herokuapp.com&#39;,\n &#39;HTTP_TOTAL_ROUTE_TIME&#39;: &#39;0&#39;,\n &#39;HTTP_USER_AGENT&#39;: &#39;curl/7.43.0&#39;,\n &#39;HTTP_VIA&#39;: &#39;1.1 vegur&#39;,\n &#39;HTTP_X_FORWARDED_FOR&#39;: &#39;45.127.234.83&#39;,\n &#39;HTTP_X_FORWARDED_PORT&#39;: &#39;443&#39;,\n &#39;HTTP_X_FORWARDED_PROTO&#39;: &#39;https&#39;,\n &#39;HTTP_X_REQUEST_ID&#39;: &#39;6ee6d147-4390-42d2-809b-f53a20b496ed&#39;,\n &#39;HTTP_X_REQUEST_START&#39;: &#39;1475854327456&#39;,\n &#39;PATH_INFO&#39;: u&#39;/facebook_auth&#39;,\n &#39;QUERY_STRING&#39;: &#39;&#39;,\n &#39;RAW_URI&#39;: &#39;/facebook_auth&#39;,\n &#39;REMOTE_ADDR&#39;: &#39;10.155.37.183&#39;,\n &#39;REMOTE_PORT&#39;: &#39;56805&#39;,\n &#39;REQUEST_METHOD&#39;: &#39;POST&#39;,\n &#39;SCRIPT_NAME&#39;: u&#39;&#39;,\n &#39;SERVER_NAME&#39;: &#39;0.0.0.0&#39;,\n &#39;SERVER_PORT&#39;: &#39;25136&#39;,\n &#39;SERVER_PROTOCOL&#39;: &#39;HTTP/1.1&#39;,\n &#39;SERVER_SOFTWARE&#39;: &#39;gunicorn/19.6.0&#39;,\n &#39;gunicorn.socket&#39;: &lt;socket._socketobject object at 0x7ffb0801f520&gt;,\n &#39;wsgi.errors&#39;: &lt;gunicorn.http.wsgi.WSGIErrorsWrapper object at 0x7ffb08ac9390&gt;,\n &#39;wsgi.file_wrapper&#39;: &lt;class &#39;gunicorn.http.wsgi.FileWrapper&#39;&gt;,\n &#39;wsgi.input&#39;: &lt;gunicorn.http.body.Body object at 0x7ffb08ac9410&gt;,\n &#39;wsgi.multiprocess&#39;: True,\n &#39;wsgi.multithread&#39;: False,\n &#39;wsgi.run_once&#39;: False,\n &#39;wsgi.url_scheme&#39;: &#39;https&#39;,\n &#39;wsgi.version&#39;: (1, 0)}&gt;&quot;</pre></td>
+                  </tr>
+                
+                  <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f99d0a93d50&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7ffb0947a050&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -242,21 +257,6 @@ Via: 1.1 vegur
                   </tr>
                 
                   <tr>
-                    <td>middleware_method</td>
-                    <td class="code"><pre>&lt;bound method CommonMiddleware.process_request of &lt;django.middleware.common.CommonMiddleware object at 0x7f99cfde21d0&gt;&gt;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>request</td>
-                    <td class="code"><pre>&quot;&lt;WSGIRequest\npath:/facebook_auth,\nGET:&lt;QueryDict: {}&gt;,\nPOST:&lt;QueryDict: {}&gt;,\nCOOKIES:{},\nMETA:{&#39;CONTENT_LENGTH&#39;: &#39;269&#39;,\n &#39;CONTENT_TYPE&#39;: &#39;application/json&#39;,\n &#39;HTTP_ACCEPT&#39;: &#39;*/*&#39;,\n &#39;HTTP_CONNECTION&#39;: &#39;close&#39;,\n &#39;HTTP_CONNECT_TIME&#39;: &#39;0&#39;,\n &#39;HTTP_HOST&#39;: &#39;jackbot23.herokuapp.com&#39;,\n &#39;HTTP_TOTAL_ROUTE_TIME&#39;: &#39;0&#39;,\n &#39;HTTP_USER_AGENT&#39;: &#39;curl/7.43.0&#39;,\n &#39;HTTP_VIA&#39;: &#39;1.1 vegur&#39;,\n &#39;HTTP_X_FORWARDED_FOR&#39;: &#39;45.127.234.83&#39;,\n &#39;HTTP_X_FORWARDED_PORT&#39;: &#39;443&#39;,\n &#39;HTTP_X_FORWARDED_PROTO&#39;: &#39;https&#39;,\n &#39;HTTP_X_REQUEST_ID&#39;: &#39;e70809b5-f0e2-483d-bd15-061183cfdf09&#39;,\n &#39;HTTP_X_REQUEST_START&#39;: &#39;1475853903300&#39;,\n &#39;PATH_INFO&#39;: u&#39;/facebook_auth&#39;,\n &#39;QUERY_STRING&#39;: &#39;&#39;,\n &#39;RAW_URI&#39;: &#39;/facebook_auth&#39;,\n &#39;REMOTE_ADDR&#39;: &#39;10.13.200.15&#39;,\n &#39;REMOTE_PORT&#39;: &#39;47299&#39;,\n &#39;REQUEST_METHOD&#39;: &#39;POST&#39;,\n &#39;SCRIPT_NAME&#39;: u&#39;&#39;,\n &#39;SERVER_NAME&#39;: &#39;0.0.0.0&#39;,\n &#39;SERVER_PORT&#39;: &#39;14099&#39;,\n &#39;SERVER_PROTOCOL&#39;: &#39;HTTP/1.1&#39;,\n &#39;SERVER_SOFTWARE&#39;: &#39;gunicorn/19.6.0&#39;,\n &#39;gunicorn.socket&#39;: &lt;socket._socketobject object at 0x7f99cfc1d600&gt;,\n &#39;wsgi.errors&#39;: &lt;gunicorn.http.wsgi.WSGIErrorsWrapper object at 0x7f99cf87b1d0&gt;,\n &#39;wsgi.file_wrapper&#39;: &lt;class &#39;gunicorn.http.wsgi.FileWrapper&#39;&gt;,\n &#39;wsgi.input&#39;: &lt;gunicorn.http.body.Body object at 0x7f99cfc157d0&gt;,\n &#39;wsgi.multiprocess&#39;: True,\n &#39;wsgi.multithread&#39;: False,\n &#39;wsgi.run_once&#39;: False,\n &#39;wsgi.url_scheme&#39;: &#39;https&#39;,\n &#39;wsgi.version&#39;: (1, 0)}&gt;&quot;</pre></td>
-                  </tr>
-                
-                  <tr>
                     <td>urlconf</td>
                     <td class="code"><pre>&#39;chatbot.urls&#39;</pre></td>
-                  </tr>
-                
-                  <tr>
-                    <td>resolver</td>
-                    <td class="code"><pre>&lt;RegexURLResolver &#39;chatbot.urls&#39; (None:None) ^/&gt;</pre></td>
-                  <
+                  
