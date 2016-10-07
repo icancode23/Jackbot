@@ -10,7 +10,13 @@ messagelist=[]
 VERIFY_TOKEN='7thsep2016'
 PAGE_ACCESS_TOKEN ='EAAZAmgNlvlm8BADe3cBcDQZAvaWb4uivxgbKavBzm6DefYmhFSQfGDvvC0ZAWJMjSaoVhVZANZAKZAbBbSamyeSFuPzXZAelNRnP6jNtZCgy7jID0tYJdZBN5fubQcUaHtzxFCemltFM0liqPb5pJZBsWZBekU68t3qvw3mGpCzBxBz6wZDZD'
 def post_facebook_message(fbid,message_text):
-	post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
+	user_details_url = "https://graph.facebook.com/v2.6/%s"%fbid #using the fb api to extract the user details of the sender
+    user_details_params = {'fields':'first_name,last_name,profile_pic', 'access_token':PAGE_ACCESS_TOKEN} 
+    user_details = requests.get(user_details_url, user_details_params).json() 
+	
+
+
+	post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN#fb api to send messages to a particular fb handle 
 	response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":message_text}})
 	status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
 	# print status.json()
@@ -42,7 +48,7 @@ class MychatbotView(generic.View):
 			for message in entry['messaging']:
 				#print incoming_message
 				print 'the RECIPIENT id is',message['recipient']['id']
-				try:
+				try:                       #made a try catch statement to avoid recursive calls even at echo and delivery callbacks 
 					global messagelist
 					print messagelist
 					sender_id=message['sender']['id']
