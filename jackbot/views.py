@@ -13,9 +13,12 @@ def post_facebook_message(fbid,message_text):
 	# user_details_url = "https://graph.facebook.com/v2.6/%s"%fbid #using the fb api to extract the user details of the sender
  #    user_details_params = {'fields':'first_name,last_name,profile_pic', 'access_token':PAGE_ACCESS_TOKEN} 
  #    user_details = requests.get(user_details_url, user_details_params).json() 
+	
+
+
 	post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN#fb api to send messages to a particular fb handle 
 	response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":message_text}})
-	status = requests.post(post_message_url, her,data=response_msg)
+	status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
 	# print status.json()
 class MychatbotView(generic.View):
 	def get(self,request,*args,**kwargs):
