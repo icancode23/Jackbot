@@ -66,7 +66,7 @@ def messageanalyze(messagetxt,senderid):
 	if (hiexp.match(messagetxt) or hiexp2.match(messagetxt)):
 		name=senderinfo(senderid)
 		messagetobesent="hey %s"%name
-		post_facebook_message(sender_id,messagetobesent)
+		post_facebook_message(senderid,messagetobesent)
 
 
 
