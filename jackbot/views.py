@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
 import requests
+import regex
 # Create your views here.
 messagelist=[]
 VERIFY_TOKEN='7thsep2016'
@@ -51,14 +52,32 @@ class MychatbotView(generic.View):
 				try:
 					sender_id = message['sender']['id']
 					message_text = message['message']['text']
-					post_facebook_message(sender_id,'random message')
+					messageanalyze(message_text,sender_id)
 				except Exception as e:
 				 	print e
 				 	print 'this is an error'
 					pass
 
 		return HttpResponse()  
-	
+
+def messageanalyze(messagetxt,senderid):
+	hiexp=regex.compile("^hey")
+	hiexp2=regex.compile("^hi")
+	if (hiexp.match(messagetxt) or hiexp2.match(messagetxt)):
+		name=senderinfo(senderid)
+		messagetobesent="hey %s"%name
+		post_facebook_message(sender_id,messagetobesent)
+
+
+
+def geocoder(searchlocation):
+	pass
+def senderinfo(senderid):
+	user_details_url = "https://graph.facebook.com/v2.6/%s"%senderid #using the fb api to extract the user details of the sender
+    user_details_params = {'fields':'first_name,last_name', 'access_token':PAGE_ACCESS_TOKEN} 
+    user_details = requests.get(user_details_url, user_details_params).json()
+    return user_details['first_name'] 
+
 def index(request):
 	print 'this is me'
 	return HttpResponse()
