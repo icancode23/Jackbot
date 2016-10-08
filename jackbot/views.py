@@ -50,8 +50,8 @@ class MychatbotView(generic.View):
 				print 'the RECIPIENT id is',message['recipient']['id']
 				try:
 					sender_id = message['sender']['id']
-					message_text = 'random message'#message['message']['text']
-					post_facebook_message(sender_id,message_text)
+					message_text = message['message']['text']
+					post_facebook_message(sender_id,'random message')
 				except Exception as e:
 				 	print e
 				 	print 'this is an error'
