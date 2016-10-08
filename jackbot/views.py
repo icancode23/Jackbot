@@ -65,8 +65,10 @@ def messageanalyze(messagetxt,senderid):
 	hiexp2=regex.compile("^hi")
 	if (hiexp.match(messagetxt) or hiexp2.match(messagetxt)):
 		name=senderinfo(senderid)
-		messagetobesent="hey %s"%name
+		messagetobesent="Hey %s"%name
 		post_facebook_message(senderid,messagetobesent)
+		post_facebook_message(senderid,"enter the area you want to search doctors in..")
+
 
 
 
